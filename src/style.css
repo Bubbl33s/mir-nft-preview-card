@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap");
+
+/* General */
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --neutral: hsl(0, 0%, 50%);
+  --dark-blue-main-bg: hsl(217, 54%, 11%);
+  --dark-blue-card-bg: hsl(216, 50%, 16%);
+  --dark-blue-line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  color: var(--white);
+}
+
+/* Main container */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--dark-blue-main-bg);
+}
+
+/* Card */
+.card {
+  width: 80%;
+  min-width: 300px;
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--dark-blue-card-bg);
+  border-radius: 15px;
+  box-shadow: 0 20px 60px 60px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.card__image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card__title {
+  font-size: 1.8rem;
+}
+
+.card__description {
+  font-size: 1.6rem;
+  color: var(--neutral);
+}
+
+.card__price-value {
+  font-size: 1.4rem;
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+.card__time-value {
+  font-size: 1.4rem;
+  color: var(--soft-blue);
+}
+
+.card__creator-image {
+  width: 100px;
+}
+
+.card__divider {
+  border: none;
+  border-top: 2px solid var(--dark-blue-line);
+}
+
+.card__creator {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 1.2rem 0 0.2rem;
+}
+
+.card__creator-image {
+  border-radius: 50%;
+  width: 30px;
+  border: 1px solid var(--white);
+}
+
+.card__creator-rights {
+  font-size: 1.5rem;
+  color: var(--neutral);
+  font-weight: 500;
+}
+
+.card__creator-name {
+  text-decoration: none;
+  color: var(--white);
+}
