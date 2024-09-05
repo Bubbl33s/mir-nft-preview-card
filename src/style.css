@@ -35,9 +35,9 @@ html {
 
 /* Card */
 .card {
-  width: 80%;
+  width: 80vw;
   min-width: 300px;
-  max-width: 500px;
+  max-width: 400px;
   margin: 0 auto;
   background: var(--dark-blue-card-bg);
   border-radius: 15px;
@@ -50,6 +50,13 @@ html {
   border-radius: 8px;
 }
 
+.card__image,
+.card__content,
+.card__title,
+.card__description {
+  margin-bottom: 1.8rem;
+}
+
 .card__title {
   font-size: 1.8rem;
 }
@@ -59,19 +66,26 @@ html {
   color: var(--neutral);
 }
 
-.card__price-value {
+.card__info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__price,
+.card__time {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   font-size: 1.4rem;
+}
+
+.card__price-value {
   color: var(--cyan);
   font-weight: 600;
 }
 
 .card__time-value {
-  font-size: 1.4rem;
   color: var(--soft-blue);
-}
-
-.card__creator-image {
-  width: 100px;
 }
 
 .card__divider {
@@ -83,7 +97,7 @@ html {
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  margin: 1.2rem 0 0.2rem;
+  margin: 1.2rem 0 0;
 }
 
 .card__creator-image {
@@ -101,4 +115,47 @@ html {
 .card__creator-name {
   text-decoration: none;
   color: var(--white);
+}
+
+/* Media queries */
+@media screen and (max-height: 799px) {
+  .card {
+    max-width: 20vh;
+  }
+}
+
+@media screen and (min-height: 800px) and (min-width: 499px) {
+  .card__image,
+  .card__content,
+  .card__title,
+  .card__description {
+    margin-bottom: 2rem;
+  }
+
+  .card__title {
+    font-size: 2.4rem;
+  }
+
+  .card__description {
+    font-size: 2rem;
+  }
+
+  .card__price,
+  .card__time {
+    gap: 0.8rem;
+    font-size: 1.7rem;
+  }
+
+  .card__creator {
+    gap: 1.6rem;
+    margin: 1.6rem 0 0;
+  }
+
+  .card__creator-image {
+    width: 40px;
+  }
+
+  .card__creator-rights {
+    font-size: 1.8rem;
+  }
 }
