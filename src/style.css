@@ -45,12 +45,38 @@ html {
   padding: 20px;
 }
 
-.card__image {
+.card__image,
+.card__image-filter {
   width: 100%;
   border-radius: 8px;
 }
 
-.card__image,
+.card__image__container {
+  position: relative;
+  overflow: hidden;
+}
+
+.card__image-filter {
+  position: absolute;
+  content: "";
+  top: 0;
+  height: 99%;
+  background: var(--cyan);
+  opacity: 0.5;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.card__image-filter-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4.5rem;
+  opacity: 0;
+}
+
+.card__image__container,
 .card__content,
 .card__title,
 .card__description {
@@ -80,8 +106,8 @@ html {
 }
 
 .card__price-value {
-  color: var(--cyan);
   font-weight: 600;
+  color: var(--cyan);
 }
 
 .card__time-value {
@@ -117,6 +143,43 @@ html {
   color: var(--white);
 }
 
+/* States animations */
+.card__image__container:hover {
+  cursor: pointer;
+}
+
+.card__image-filter {
+  transition: opacity 0.4s ease-in-out;
+}
+
+.card__image-filter-icon {
+  transition: transform 0.2s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.card__image__container:hover .card__image-filter {
+  opacity: 0.5;
+}
+
+.card__image__container:hover .card__image-filter-icon {
+  opacity: 1;
+}
+
+.card__image-filter-icon:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.card__price-value,
+.card__title,
+.card__creator-name {
+  transition: color 0.5s ease-in-out;
+}
+
+.card__title:hover,
+.card__creator-name:hover {
+  cursor: pointer;
+  color: var(--cyan);
+}
+
 /* Media queries */
 @media screen and (max-height: 799px) {
   .card {
@@ -125,7 +188,7 @@ html {
 }
 
 @media screen and (min-height: 800px) and (min-width: 499px) {
-  .card__image,
+  .card__image__container,
   .card__content,
   .card__title,
   .card__description {

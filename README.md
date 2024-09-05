@@ -20,7 +20,7 @@ This is a solution to the '**404 not found**' project of the Make It Real course
 
 ### The challenge
 
-- Design a '**404 not found**' page
+- Design a '**NFT preview card**' page
 - The page should be responsive
 - Consider at least two devices:
   - Mobile: 375px
